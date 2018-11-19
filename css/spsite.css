@@ -1,0 +1,806 @@
+@charset "utf-8";
+/*common*/
+html,body{font-size:16px;font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO",sans-serif;}
+@media screen and (min-width:427px) and (min-width:768px){html,body{font-size: 18px;}}
+@media screen and (min-width:769px){html,body{font-size: 20px;}}
+body{
+	background-color: #fff;
+	height: auto;
+	counter-reset:num_item_text num_dlc4set;
+	}
+header,footer{
+    padding: 5px 15px;
+    left: 0;
+    right: 0;
+    margin: auto;
+	}
+header{
+	top:0;
+	position:absolute;
+	}
+footer{
+	bottom: 0;
+	position:relative;
+	background: #000;
+	}
+header ul,footer ul{
+	list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+	align-items: center;
+    max-width:100%;
+    width: 100%;
+    margin: 0 auto;
+	}
+header ul a,footer ul a{
+	display: block;
+	}
+header ul .logo_ecap,footer ul .logo_ecap{
+	max-width:6rem;
+	width:100%;
+	}
+header ul .logo_ecap,footer ul .logo_ecap_rakuten{
+	max-width:10rem;
+	width:100%;
+	}
+header .logo_ps4,header .logo_ns{
+	max-width:5rem;
+	width:100%;
+	margin:0 1rem 0 0;
+	}
+header ul .btn_twshare{
+	width:22px;
+	height:22px;
+	}
+header .logos_right{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+	}
+footer .trademark_ps4{
+	font-size: 0.8rem;
+    color: #999;
+    text-align: right;
+    margin: 1rem 0;
+	}
+footer .copyright{
+	font-family: sans-serif;
+	color: #fff;
+	font-size: 0.7rem;
+	}
+@media screen and (max-width:426px){
+	footer .copyright{
+		font-size: 0.5rem;
+		width: 50%;
+		}
+	}
+div img,figure img{
+	display: block;
+    width: 100%;
+	}
+span.sup{
+	font-size: 0.5em;
+    vertical-align: super;
+	}
+.keyvisual{
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/keyvisual.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.keyvisual:after{
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background-image: url(../img/gizagiza.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: repeat;
+    width: 100%;
+    height: 3rem;
+	z-index: 1;
+	}
+.keyvisual .logotitle{
+	max-width:20%;
+    width: 100%;
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+	}
+@media screen and (max-width:1440px){
+	.keyvisual .logotitle{
+	}	
+	}
+.keyvisual .catchcopy{
+	max-width: 25%;
+    width: 100%;
+    position: absolute;
+    bottom: 30vh;
+    left: 10vw;
+	transform:rotate(0);
+	animation:anime_catch 2s infinite ease-in alternate;
+	}
+@keyframes anime_catch{
+	0%{transform:rotate(2deg);}
+	50%{transform:rotate(-4deg);}
+	100%{transform:rotate(2deg);}
+	}
+@media screen and (max-width:1024px){
+	.keyvisual .logotitle{
+		max-width: 400px;
+		top: 5vh;
+		left: 3vw;
+		}
+	}
+@media screen and (max-width:768px){
+	.keyvisual .logotitle{
+		max-width: 300px;
+		}
+	}
+@media screen and (max-width:426px){
+	.keyvisual .catchcopy{
+		max-width: 200px;
+		bottom: 30vh;
+		left: 0vw;
+		}
+	.keyvisual .logotitle{
+		max-width: 200px;
+		left: 1vw;
+		}
+	}
+.keyvisual .reserve_nowon{
+	position: absolute;
+    max-width: 25%;
+    width: 100%;
+    bottom: 10vh;
+    left: 5vw;
+	}
+@media screen and (max-width:1440px){
+	.keyvisual .reserve_nowon{
+	  }
+	}
+@media screen and (max-width:426px){
+	.keyvisual .reserve_nowon{
+      max-width: 350px;
+      bottom: 8vh;
+      left: 0vw;
+      right: 0vw;
+      margin: auto;
+		}
+	}
+.keyvisual .date_onsales{
+	max-width: 30%;
+    width: 100%;
+    position: absolute;
+    bottom: 5vh;
+    left: 5vw;
+	z-index: 2;
+	}
+@media screen and (max-width:1440px){
+	.keyvisual .date_onsales{
+		}
+	}
+@media screen and (max-width:426px){
+	.keyvisual .date_onsales{
+		max-width: 400px;
+		bottom: 0vh;
+		left: 0vw;
+		right: 0;
+		margin: auto;
+		}
+	}
+.keyvisual .exclusive_sheets{
+	max-width:30%;
+    width: 100%;
+    position: absolute;
+    bottom: 5vh;
+    right: 5vw;
+}
+@media screen and (max-width:1440px){
+	.keyvisual .exclusive_sheets{
+		}
+	}
+@media screen and (max-width:1280px){
+	.keyvisual .exclusive_sheets{
+		}
+	}
+@media screen and (max-width:1024px){
+	.keyvisual .exclusive_sheets{
+		max-width: 350px;
+		width: 100%;
+		position: absolute;
+		bottom: 10vh;
+		right: 0vw;
+		}
+	}
+@media screen and (max-width:768px){
+	.keyvisual .exclusive_sheets{
+		max-width: 300px;
+		width: 100%;
+		position: absolute;
+		bottom: 10vh;
+		right: 0vw;
+		}
+	}
+@media screen and (max-width:426px){
+	.keyvisual .exclusive_sheets{
+		max-width: 200px;
+		width: 100%;
+		position: absolute;
+		bottom: 20vh;
+		right: 0vw;
+		}
+	}
+@media screen and (max-width:320px){
+	.keyvisual .logotitle{
+		max-width: 150px;
+		top: 7vh;
+		}
+	.keyvisual .exclusive_sheets{
+		max-width: 130px;
+		}
+	}
+.about_this_game{
+	position: relative;
+	background-color: #fffb72;
+    width: 100%;
+    height: auto;
+    padding: 4rem 1rem 6rem;
+    box-sizing: border-box;
+	}
+.about_this_game:after{
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background-image: url(../img/naminami.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: repeat;
+    width: 100%;
+    height:2rem;
+	z-index: 1;
+	}
+.about_this_game p {
+	font-family: "Rounded Mplus 1c",sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    background: #fff;
+    color: #8b3c07;
+    padding: 2.0rem;
+    text-align: center;
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+	box-sizing: border-box;
+	border-radius: 1rem;
+	}
+.about_this_game_detail{}
+.about_this_game_detail .bg_pinkstripe{
+	background-image: repeating-linear-gradient(90deg, #ff8acf,#ff8acf 5px, white 5px,white 10px);
+	height: auto;
+    overflow: auto;
+    box-sizing: border-box;
+	padding: 4rem 1rem;
+	}
+.about_this_game_detail p{
+	font-family: "Rounded Mplus 1c",sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    background: #fff;
+    color: #8b3c07;
+    padding: 2.0rem;
+    text-align: center;
+    max-width: 1440px;
+    width: 100%;
+    margin:auto;
+    box-sizing: border-box;
+	border-radius: 1rem;
+	}
+@media screen and (max-width:768px){.about_this_game_detail p{padding:1.0rem;}}
+.about_this_game_detail p br.middle{line-height: 4;}
+.about_this_game_detail .screenshots_1_3,.about_this_game_detail .screenshots_4_6{
+	width: 100%;
+    display: flex;
+    flex-direction: row;
+	flex-wrap: nowrap;
+	}
+@media screen and (max-width:426px){
+	.about_this_game_detail .screenshots_1_3,
+	.about_this_game_detail .screenshots_4_6{
+		flex-wrap:wrap;
+		}
+	}
+.about_this_game_detail .screenshots_1_3 div[class^="screenshot_"]{
+	width:100%;
+	}
+h2{
+	color: #795f46;
+    text-align: center;
+    font-size: 4rem;
+    font-family: "Rounded Mplus 1c",sans-serif;
+    font-weight: 900;
+    border-bottom: 0.5rem dotted;
+    max-width: 600px;
+    margin: auto;
+    padding-bottom: 1rem;
+	}
+.empha_ecaponly{
+	color:#ea68a2;
+	}
+.lineup{
+	position: relative;
+	padding: 6rem 1rem 4rem;
+	}
+.lineup:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/naminami_reflec.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: repeat;
+    width: 100%;
+    height:2rem;
+	z-index: 1;
+	}
+.lineup .lineups{
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+	flex-wrap: wrap;
+    flex-direction: row;
+	justify-content: space-around;
+    margin: 4rem auto;
+	list-style: none;
+	}
+.lineup .lineups li[class^="lineup_"]{
+	max-width: 290px;
+    width: 100%;
+    padding: 1.0rem;
+    margin: 1rem 0.5rem;
+    background: #fbf8e5;
+	border-radius: 1rem;
+	}
+@media screen and (max-width:426px){.lineup .lineups li[class^="lineup_"]{margin: 0.5rem;}}
+.lineup .lineups li[class^="lineup_"] h3{
+	border: 2px dotted;
+    border-left-color: #888;
+    border-top-color: #888;
+    border-bottom-color: #222;
+    border-right-color: #222;
+	border-radius: 0.5rem;
+    background: #fff;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 100;
+    line-height: 1.2;
+    min-height: 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	}
+@media screen and (max-width:426px){.lineup .lineups li[class^="lineup_"] h3{font-size: 0.6rem;min-height:60px;padding: 0.5rem;}}
+.lineup .lineups li[class^="lineup_"]:nth-child(n+3) h3{
+	border: 2px dotted;
+	border-left-color: #ffd3f3;
+    border-top-color: #ffd3f3;
+    border-bottom-color: #e968a2;
+    border-right-color: #e968a2;
+	}
+.lineup p{
+	color: #ea68a2;
+    font-family: "Rounded Mplus 1c",sans-serif;
+	font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+	}
+@media screen and (max-width:426px){.lineup p{font-size: 1.2rem;}}
+@media screen and (max-width:320px){.lineup p{font-size: 1.1rem;}}
+.lineup_details{
+	position: relative;
+	}
+.lineup_details:before,.lineup_details:after{
+	content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/naminami_reflec.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: repeat;
+    width: 100%;
+    height:2rem;
+	z-index: 1;
+	}
+.lineup_details .detail_wpack_ecap{
+	padding: 6rem 1rem;
+	background-image: url(../img/ginghamcheck_pink_white.png);
+	background-repeat: repeat;
+	border-bottom: 1rem solid #8b3c07;
+	}
+.lineup_details div[class^="detail_"] h3{
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+	counter-reset:num_item_text num_dlc4set;
+	border-left: 5rem solid;
+	border-bottom-right-radius: 5rem;
+	border-top-right-radius: 5rem;
+	}
+@media screen and (max-width:426px){.lineup_details div[class^="detail_"] h3{font-size:1.2rem;padding: 1rem;border-left-width: 2rem;border-bottom-right-radius:2rem;border-top-right-radius:2rem;}}
+@media screen and (max-width:320px){.lineup_details div[class^="detail_"] h3{font-size:1.1rem;}}
+.lineup_details div[class="detail_wpack_ecap"] h3{border-left-color: #ea68a2;}
+.lineup_details div[class="detail_wpack"] h3{border-left-color: #fffc5e;}
+.lineup_details div[class^="detail_"] .contents_area{
+	max-width: 1440px;
+    width: 100%;
+	margin: 2rem auto;
+	padding: 1rem;
+    background-color: #fff;
+    box-sizing: border-box;
+	}
+@media screen and (max-width:426px){.lineup_details div[class^="detail_"] .contents_area{padding:0.2rem;}}
+.lineup_details div[class^="detail_"] .contents_area .picture_text{
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	justify-content: space-around;
+    width: 100%;
+	}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text div{width:100%;}
+.lineup_details div[class^="detail_"] .contents_area .picture_text div[class^="item_"]{
+	width:45%;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	}
+@media screen and (max-width:1024px){
+	.lineup_details div[class^="detail_"] .contents_area .picture_text div[class^="item_"]{
+		width:100%;
+		max-width:450px;
+		}
+	}
+@media screen and (max-width:768px){
+	.lineup_details div[class^="detail_"] .contents_area .picture_text div[class^="item_"]{
+		max-width:100%;
+		}
+	.lineup_details div[class^="detail_"] .contents_area .picture_text div[class="item_text"]{margin:2rem 0;text-align: center;}
+	}
+@media screen and (max-width:426px){.lineup_details div[class^="detail_"] .contents_area .picture_text div[class="item_text"]{margin:0.5rem 0;}}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text dl{
+	list-style: none;
+    line-height: 1.5;
+	border:4px solid #f6f6f6;
+	padding: 1.0rem;
+	}
+@media screen and (max-width:1024px){.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text dl{padding:0.5rem;}}
+@media screen and (max-width:426px){.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text dl{padding:0.2rem;}}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text ul,.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text ol{
+	list-style: none;
+	}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text ol>li{
+	display:flex;
+	font-size: 0.7rem;
+	}
+@media screen and (max-width:768px){.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text ol>li{display: block;}}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text ol>li:before{
+	counter-increment: num_item_text;
+    content: "（"counter(num_item_text)"）";
+	font-size: 1em;
+	}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text .about_package{margin: 0.2rem 0;font-size: 0.7rem;}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text .dlc4set{border:1px solid #ea68a2;margin:0.5rem 0;}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text .dlc4set h6{background-color:#ea68a2;color:#fff;text-align:center;padding: 0.5rem 0;}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text .dlc4set ul{line-height: 1.8;}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text .dlc4set ul li{
+	font-size: 0.7rem;
+	padding: 0 0 0 0.5rem;
+	}
+@media screen and (max-width:320px){.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text .dlc4set ul li{font-size: 0.5rem;}}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text .dlc4set ul li:before{
+	counter-increment: num_dlc4set;
+    content: counter(num_dlc4set)".";
+	font-size: 1em;
+	}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text .dlc4set .note{
+	font-size: 0.5rem;
+    text-align: right;
+	}
+.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text table{
+	font-size: 0.6rem;
+    width: 100%;
+    margin: 1rem 0 0;
+	text-align: left;
+	}
+@media screen and (max-width:320px){.lineup_details div[class^="detail_"] .contents_area .picture_text .item_text table tr td{display:block;width:100%;text-align: center;}}
+.price{
+    width: 100%;background: linear-gradient(180deg,transparent 60%,#ffd4f3 60%);
+    text-align: right;
+    font-size: 4.5rem;
+    color: #222;
+    font-weight: 900;
+    line-height: 1.4;
+    padding: 0 1rem;
+    box-sizing: border-box;
+	}
+.price:after{
+	content:"円+税";
+    font-size: 0.3em;
+    color: #888;
+	}
+@media screen and (max-width:1024px){.price{font-size: 2.5rem;}}
+a.btn_buy{
+	max-width: 900px;
+    width: 100%;
+    display: block;
+	margin: 2rem auto;
+	}
+@media screen and (max-width:768px){a.btn_buy{margin: 0rem auto;}}
+@media screen and (max-width:426px){a.btn_buy{max-width:500px;}}
+.lineup_details div[class^="detail_"] .contents_area .attention{color:#064a89;font-size: 0.7rem;line-height: 1.4;margin: 1rem;}
+.lineup_details .detail_wpack{
+	padding: 6rem 1rem;
+	background-image: url(../img/dott_yellow.png);
+	background-repeat: repeat;
+	border-bottom: 1rem solid #8b3c07;
+	}
+.btn_img_pc{}
+.btn_img_sp{}
+@media screen and (max-width:427px){.btn_img_pc{display:none;}}
+@media screen and (min-width:426px){.btn_img_sp{display:none;}}
+.lineup_details .game_sheetandgameonly{
+	display:flex;
+	flex-direction:row;
+	flex-wrap: nowrap;
+	justify-content: stretch;
+    align-items: stretch;
+	}
+@media screen and (max-width:1024px){.lineup_details .game_sheetandgameonly{flex-wrap:wrap;}}
+.lineup_details .bg_pink{
+	background:#ea68a2;
+	padding: 6rem 1rem;
+    max-width: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	}
+.lineup_details .bg_yellow{
+	background:#ffff00;
+	padding: 6rem 1rem;
+    max-width: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	}
+@media screen and (max-width:1024px){.lineup_details .bg_pink,.lineup_details .bg_yellow{max-width: 100%;}}
+.lineup_details .detail_game_sheet,
+.lineup_details .detail_game_only{
+	display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+	max-width: 650px;
+    width: 100%;	
+	}
+.lineup_details .game_sheetandgameonly div[class^="detail_"] h3 {
+	max-width:100%;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    counter-reset: num_item_text num_dlc4set;
+    border-left: none;
+}
+@media screen and (max-width:426px){.lineup_details .game_sheetandgameonly div[class^="detail_"] h3 {min-height:auto;font-size:1.2rem;}}
+.lineup_details .game_sheetandgameonly div[class^="detail_"] h4{
+	font-size:1.0rem;
+	font-weight:500;
+	}
+.lineup_details .game_sheetandgameonly div[class^="detail_"] .contents_area{
+	min-height:95vh;
+	}
+@media screen and (max-width:1024px){
+	.lineup_details .game_sheetandgameonly div[class^="detail_"] .contents_area{
+		min-height:auto;
+		}
+	}
+.lineup_details .game_sheetandgameonly div[class^="detail_"] .contents_area .picture_text{
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+	}
+.lineup_details .game_sheetandgameonly div[class^="detail_"] .contents_area .picture_text div[class^="item_"]{
+	max-width:750px;
+	width:100%;
+	}
+.lineup_details .game_sheetandgameonly div[class^="detail_"] .contents_area .picture_text div[class="item_text"]{
+	margin: 2rem 0 0 0;
+	min-height: 350px;
+	}
+@media screen and (max-width:1024px){.lineup_details .game_sheetandgameonly div[class^="detail_"] .contents_area .picture_text div[class="item_text"]{min-height:0;}}
+.about_sheet{
+	position: relative;
+	padding: 6rem 1rem;
+	background-image: repeating-linear-gradient(90deg, #064a89, #064a89 5px, white 5px, white 10px,#f7b41d 10px,#f7b41d 15px,white 15px,white 20px);
+    background-repeat: repeat;	
+	}
+.about_sheet:before{
+	content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/naminami_reflec.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: repeat;
+    width: 100%;
+    height: 2rem;
+    z-index: 1;
+	}
+.about_sheet:after{
+	content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background-image: url(../img/gizagiza.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: repeat;
+    width: 100%;
+    height: 3rem;
+    z-index: 1;
+	}
+.about_sheet .bg_white{
+	background: #fff;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 1rem;
+	box-sizing: border-box;
+	}
+.about_sheet h2{
+	font-size:2rem;
+	margin:auto;
+	}
+@media screen and (max-width:426px){.about_sheet h2{font-size:1.8rem;}}
+@media screen and (max-width:320px){.about_sheet h2{font-size:1.6rem;}}
+.about_sheet h2 .line_1{
+	font-size:1.5rem;
+	font-weight: 500;
+	}
+@media screen and (max-width:320px){.about_sheet h2 .line_1{font-size:1.2rem;}}
+.about_sheet .sheet_pic_txt{
+	display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+    max-width: 1440px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 2rem;
+    box-sizing: border-box;
+	    background: #fff;
+    justify-content: space-around;
+	}
+@media screen and (max-width:426px){.about_sheet .sheet_pic_txt{padding: 0.5rem;}}
+.about_sheet .sheet_pic{
+	max-width:400px;
+	width:100%;
+	border: 1px solid #e968a2;
+	}
+.about_sheet .sheet_txt{
+max-width: 650px;
+    width: 100%;
+    background: #e968a2;
+    color: #fff;
+    padding: 2rem;
+    box-sizing: border-box;
+	}
+@media screen and (max-width:426px){.about_sheet .sheet_txt{padding:1rem;}}
+.about_sheet .sheet_txt	p{
+	font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 1.4;
+	font-family: "Rounded Mplus 1c",sans-serif;
+	}
+@media screen and (max-width:426px){.about_sheet .sheet_txt p{font-size: 1.3rem;}}
+@media screen and (max-width:320px){.about_sheet .sheet_txt p{font-size: 1.15rem;}}
+.about_sheet .sheet_txt table{margin: 1rem;}
+.about_sheet .sheet_txt ul{
+	}
+.about_sheet .sheet_txt ul li{
+	display:flex;
+	flex-direction:row;
+	}
+.about_sheet .sheet_txt ul li:before{
+	content:"※";
+	display:block;
+	}
+.spec_area{
+	background-image:linear-gradient(180deg,#d3f5db 0%, #b4ff6c 50%,#f9f07d 100%);
+	overflow: auto;
+    height: auto;
+	padding: 4rem 1rem;
+	}
+.spec_area .banner_area .link_officail{
+	display:block;
+	max-width: 1000px;
+    width: 100%;
+    margin:auto;
+	box-shadow: 0 0 10px 0px #888;
+	transform: translateY(-5px);
+	transition:all 0.3s;
+	}
+.spec_area .banner_area .link_officail:hover{
+	box-shadow: 0 0 2px 0px #888;
+	transform: translateY(0px);
+	}
+@media screen and (max-width:427px){.banner_pc{display:none;}}
+@media screen and (min-width:426px){.banner_sp{display:none;}}
+.spec_area .spec_details{
+	margin: 4rem 0 0 1rem;
+	}
+@media screen and (max-width:426px){.spec_area .spec_details{margin: 4rem auto 0rem;}}
+.spec_area .spec_details table{
+	border-collapse: separate;
+    border-spacing: 0.5rem;
+	color: #666;
+	font-size: 0.8rem;
+	max-width: 500px;
+    width: 100%;
+	}
+@media screen and (max-width:320px){.spec_area .spec_details table{text-align: center;line-height: 1.4;}}
+@media screen and (max-width:320px){.spec_area .spec_details table tr td{display:block;width:100%;}}
+.spec_area .spec_details table caption{
+	text-align:left;
+	}
+@media screen and (max-width:320px){.spec_area .spec_details table caption{text-align:center;}}
+.spec_area .spec_details table tr td:nth-child(2):before{
+	content:"：";
+	}
+.spec_area .spec_details .logo_cero_D{
+    display: inline;
+    max-width: 45px;
+    width: 100%;
+    vertical-align: top;
+    padding: 0 0 0 0.5rem;
+	}
+.spec_area .about_trademark{
+	max-width: 600px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #222;
+	}
