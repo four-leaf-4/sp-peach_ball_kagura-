@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /*common*/
 html,body{font-size:16px;font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO",sans-serif;}
 @media screen and (min-width:427px) and (min-width:768px){html,body{font-size: 18px;}}
@@ -177,7 +177,7 @@ span.sup{
 		}
 	}
 .keyvisual .date_onsales{
-	max-width: 30%;
+	max-width: 150px;
     width: 100%;
     position: absolute;
     bottom: 5vh;
